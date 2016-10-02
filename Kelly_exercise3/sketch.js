@@ -44,7 +44,7 @@ function setup() {
 function draw() {
   
   // check goal 
-  if (score >= 50) {
+  if (score >= 300) {
     endGame();
   }
   else {
@@ -156,8 +156,21 @@ function endGame() {
   text("You win!", 280, 80);
   
   // button to restart
-  rect(200, 200, 200, 200);
-  if (mouseIsPressed && (mouseX > 200) && (mouseX <400) && (mouseY>200) && (mouseY<400)) {
+  
+  fill(255, 204, 229);
+  rect(250, 200, 300, 100, 20);
+  fill(0);
+  textSize(28);
+  textAlign(CENTER);
+  text("RESTART", 400, 270);
+  
+  if ((mouseX > 250) && (mouseX < 550) && (mouseY> 200) && (mouseY < 300)) {
+    fill(255, 153, 204);
+    rect(250, 200, 300, 100, 20);
+    text("RESTART", 400, 270);
+  }
+  
+  if (mouseIsPressed && (mouseX > 250) && (mouseX <550) && (mouseY>200) && (mouseY<300)) {
     score = 0;  
   }
   
